@@ -1,13 +1,13 @@
-#!/bin/bash
+#!/bin/zsh
 
-# Source the functions file to make the commands available
+# Source the functions
 source /home/dizziedbliss/CODE/aura/aura_fns
 
-# Function to listen for user input (jarvis commands)
+# Function to listen for user input and act like an AI
 listen_for_commands() {
     while true; do
-        # Wait for user input and check for specific commands
-        read -r input
+        echo -n "Your command, Master: "  # Prompt user for input
+        read -r input                    # Capture user input
         case "$input" in
             "hello" | "hi")
                 greet ;;
@@ -28,14 +28,12 @@ listen_for_commands() {
             "news")
                 get_news ;;
             "exit")
-                echo "Goodbye, Master!" && exit ;;
+                echo "Goodbye, Master!" && break ;;
             *)
-                # If it's not a Jarvis command, just let it be executed as normal shell command
-                eval "$input"
-                ;;
+                echo "Sorry, I didn't understand: $input" ;;
         esac
     done
 }
 
-# Start the listener in the foreground
+# Start the listener
 listen_for_commands
