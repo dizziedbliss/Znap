@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Function to greet
+greet() {
+    cowsay "Hello, Master! How can I assist you today?"
+}
+
+# Function to fetch weather (dummy function for now)
+get_weather() {
+    echo "Fetching weather details for you..."
+}
+
+# Function to play music
+play_music() {
+    echo "Let's play some music! 🎶"
+    mplayer /path/to/your/music/file.mp3  # You can replace with any path
+}
+
+# Function to show disk usage
+disk_usage() {
+    echo "Here's the disk usage status:"
+    df -h
+}
+
+# Function to show system stats (CPU, Memory, etc.)
+sys_stats() {
+    echo "Displaying system stats (CPU, memory):"
+    top -n 1 | head -n 10
+}
+
+# Function to tell a joke
+tell_joke() {
+    cowsay "Why don’t skeletons fight each other? They don’t have the guts!"
+}
+
+# Function to get current time
+get_time() {
+    echo "The current time is:"
+    date
+}
+
+# Function to show calendar
+show_calendar() {
+    cowsay "Here’s the calendar for this month:"
+    cal
+}
+
+# Function to show news (RSS feed example)
+get_news() {
+    echo "Fetching latest news..."
+    curl -s "https://news.google.com/news/rss" | xmlstarlet fo | head -n 20
+}
