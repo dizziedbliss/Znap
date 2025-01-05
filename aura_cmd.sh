@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Source the functions
-source /home/dizziedbliss/CODE/aura/aura_fns
+source /home/dizziedbliss/CODE/aura/aura_fns.sh
 
 # Function to listen for user input and act like an AI
 listen_for_commands() {
