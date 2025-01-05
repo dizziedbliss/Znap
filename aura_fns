@@ -5,8 +5,29 @@ function greet() {
 }
 
 function get_weather() {
-    echo "Fetching weather details for you..."
+    echo "Fetching weather details..."
+    
+    api_key="d202c660f7c0452ea10105424241112"
+    city="Hassan"
+    
+    # Fetch weather data from WeatherAPI
+    weather_data=$(curl -s "http://api.weatherapi.com/v1/current.json?key=$api_key&q=$city")
+    
+    # Check if the data is valid
+    if [[ -z "$weather_data" ]]; then
+        echo "Sorry, I couldn't fetch the weather data."
+        return
+    fi
+    
+    # Extract relevant weather information
+    temperature=$(echo "$weather_data" | grep -o '"temp_c":[^,]*' | cut -d: -f2)
+    condition=$(echo "$weather_data" | grep -o '"text":".*"' | cut -d: -f2 | sed 's/"//g')
+    
+    # Display the weather info
+    echo "Current weather in $city: $temperature°C, $condition"
 }
+
+
 
 function play_music() {
     echo "Let's play some music! 🎶"
