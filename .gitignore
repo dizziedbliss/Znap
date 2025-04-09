@@ -1,0 +1,27 @@
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Cache & bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Poetry's virtual environment cache
+.cache/
+poetry.lock
+
+# OS-specific junk
+.DS_Store
+Thumbs.db
+
+# Logs & temp files
+*.log
+*.tmp
+
+# IDE/Editor-specific stuff
+.vscode/
+.idea/
+*.swp
