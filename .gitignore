@@ -25,3 +25,7 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+# Development files
+*.pre-commit-config.yaml
+/tests
